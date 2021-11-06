@@ -1,0 +1,11 @@
+
+-- DROP DATABASE IF EXISTS quotes_db;
+-- CREATE DATABASE quotes_db;
+
+-- USE quotes_db;
+
+CREATE TABLE IF NOT EXISTS `quotes` (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    quote TEXT NOT NULL,
+    author VARCHAR(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
