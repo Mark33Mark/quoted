@@ -154,7 +154,7 @@ a:hover, a::selection{
   }
 }
 
-@media only screen and (orientation : landscape){
+@media only screen and (max-device-width: 812px) and (orientation : landscape){
   
   .custom-bg{
     padding: 0.25rem 1rem;
