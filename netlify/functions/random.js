@@ -1,5 +1,6 @@
 const mysql = require( "mysql2" );
 const { randomQuote } = require("../../models/quotes.model");
+// require('dotenv').config();
 
 // Create a connection to the database
 const connection = mysql.createPool({
@@ -17,11 +18,12 @@ exports.handler = (event, context, callback) => {
 
   try {
 
-    // connection.getConnection(function(err, connected) {
+    connection.getConnection(function(err, connected) {
 
-    //   console.log(connection);
+      console.log('error = ', err);
+      console.log('connection = ', connection);
 
-      connection.execute( sql_query, (error, results) => {
+      connected.execute( sql_query, (error, results) => {
 
       if (error){ 
         console.log('calling callback with error')
@@ -41,7 +43,7 @@ exports.handler = (event, context, callback) => {
         })
       }
     })
-  // })
+  })
 } catch (e) {
     console.log('There is an error in communicating with the Quotes database: ', e);
   }
