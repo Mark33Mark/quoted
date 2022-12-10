@@ -1,6 +1,6 @@
 const mysql = require( "mysql2" );
 const { randomQuote } = require("../../models/quotes.model");
-require('dotenv').config();
+// require('dotenv').config();
 
 // Create a connection to the database
 const connection = mysql.createPool({
@@ -44,12 +44,3 @@ exports.handler = (event, context, callback) => {
     console.log('There is an error in communicating with the Quotes database: ', e);
   }
 }
-
-
-// exports.handler = async (event) => {
-//   console.log({"message": "Welcome to the quotes page."});
-//   return {
-//       statusCode: 200,
-//       body: JSON.stringify({message: 'Welcome to the quotes page.'})
-//   }
-// }
