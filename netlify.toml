@@ -4,7 +4,7 @@ node_bundler = "esbuild"
 port = 8989
 publish = "public"
 [build]
-command = "# no build command"
-# command = "npm run build"
+# command = "# no build command"
+command = "npm install"
 functions = "netlify/functions"
 publish = "public"
