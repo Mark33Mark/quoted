@@ -37,6 +37,7 @@ Quotes.findById = (quoteId, result) => {
 
     // couldn't find Quote with the id
     result({ kind: "not_found" }, null);
+    console.log(`\nQuote not found: The requested quote id: ${quoteId} does not exist.`);
     });
 };
 
@@ -49,7 +50,7 @@ Quotes.getAll = result => {
         return;
     }
 
-    console.log("All quotes found");
+    console.log("All quotes found.");
     result(null, res);
     });
 };
@@ -82,6 +83,7 @@ Quotes.updateById = (id, quotes, result) => {
         if (res.affectedRows == 0) {
         // not found Customer with the id
         result({ kind: "not_found" }, null);
+        console.log(`\nQuote not found: The requested quote id: ${id} does not exist.`);
         return;
         }
 
@@ -104,6 +106,7 @@ Quotes.remove = (id, result) => {
     if (res.affectedRows == 0) {
       // not found Customer with the id
         result({ kind: "not_found" }, null);
+        console.log(`\nQuote not found: The requested quote id: ${id} does not exist.`);
         return;
     }
 

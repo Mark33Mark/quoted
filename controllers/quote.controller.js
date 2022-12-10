@@ -59,7 +59,7 @@ exports.findOne = (req, res) => {
         if (err) {
             if (err.kind === "not_found") {
                 res.status(404).send({
-                message: `Not found Quote with id ${req.params.quoteId}.`
+                message: `Sorry, I can't find a quote with id ${req.params.quoteId}.`
                 });
             } else {
                 res.status(500).send({
@@ -86,7 +86,7 @@ exports.update = (req, res) => {
         if (err) {
             if (err.kind === "not_found") {
             res.status(404).send({
-                message: `Not found Quote with id ${req.params.quoteId}.`
+                message: `Sorry, I can't find a quote with id ${req.params.quoteId}.`
             });
             } else {
             res.status(500).send({
@@ -104,7 +104,7 @@ exports.delete = (req, res) => {
         if (err) {
         if (err.kind === "not_found") {
             res.status(404).send({
-            message: `Not found Quote with id ${req.params.quoteId}.`
+            message: `Sorry, I can't find a quote with id ${req.params.quoteId}.`
             });
         } else {
             res.status(500).send({

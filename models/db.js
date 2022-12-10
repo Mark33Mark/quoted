@@ -1,14 +1,26 @@
 
 const mysql     = require( "mysql2" );
-const dbConfig  = require( "../config/db.config.js" );
+require('dotenv').config();
 
 // Create a connection to the database
-let connection = mysql.createPool({
-    host: dbConfig.HOST,
-    user: dbConfig.USER,
-    password: dbConfig.PASSWORD,
-    database: dbConfig.DATABASE
+const connection = mysql.createPool({
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE
 });
+
+
+
+// const dbConfig  = require( "../config/db.config.js" );
+
+// Create a connection to the database
+// let connection = mysql.createPool({
+//     host: dbConfig.HOST,
+//     user: dbConfig.USER,
+//     password: dbConfig.PASSWORD,
+//     database: dbConfig.DATABASE
+// });
 
 // // open the MySQL connection
 // connection.connect(error => {
