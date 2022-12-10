@@ -20,9 +20,6 @@ exports.handler = (event, context, callback) => {
 
     connection.getConnection(function(err, connected) {
 
-      console.log('error = ', err);
-      console.log('connection = ', connection);
-
       connected.execute( sql_query, (error, results) => {
 
       if (error){ 
@@ -43,6 +40,7 @@ exports.handler = (event, context, callback) => {
         })
       }
     })
+    console.log('error = ', err);
   })
 } catch (e) {
     console.log('There is an error in communicating with the Quotes database: ', e);

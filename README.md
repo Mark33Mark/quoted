@@ -18,7 +18,9 @@
 ---
 ### 1. Description  
 **What is this project?**  
-* I wanted to see if I could get Heroku to work with mySQL.  I like reading quotes so I thought I'd have a go at creating a SQL database of quotes. 
+* I originally wanted to see if I could get Heroku to work with mySQL.  I like reading quotes so I thought I'd have a go at creating a SQL database of quotes.  
+
+* I've refactored this project now for Netlify using lambda functions.
 
 **Why this project?**  
 * Quotes can be inspiring, make you refocus, feel energised, feel the deeper understanding humans are capable of.  
@@ -87,8 +89,8 @@ Also the University of Sydney FSF Bootcamp course that provided great guidance f
    [x]  A MVP completed for distribution.  
    [x]  Page responsiveness for different devices tested.  
    [x]  The routes for deleting, posting, pushing have all been tested and work as expected.  
-   [x]  Webpage has a polished and mobile-responsive user interface. [URL: quote.watsonised.com](http://quote.watsonised.com)  
-   [x]  Webpage has alternative hosting address with Heroku.[URL: Heroku ](https://quot3d.herokuapp.com)  
+   [x]  Webpage has a polished and mobile-responsive user interface.  
+   [x]  Webpage is hosted on [Netlify](https://quot3d.netlify.app)  
    [x]  Repository contains a README file with descriptio, screenshot and link to deployed application.  
 
 ---
