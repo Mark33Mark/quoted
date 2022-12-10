@@ -5,6 +5,6 @@ port = 8989
 publish = "public"
 [build]
 # command = "# no build command"
-command = "npm install"
+command = "npm run build"
 functions = "netlify/functions"
 publish = "public"
