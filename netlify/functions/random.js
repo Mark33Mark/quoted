@@ -20,7 +20,9 @@ exports.handler = (event, context, callback) => {
 
     connection.getConnection(function(err, connected) {
 
-      connected.query( sql_query, (error, results) => {
+      console.log(connection);
+
+      connected.execute( sql_query, (error, results) => {
 
       if (error){ 
         console.log('calling callback with error')
@@ -36,7 +38,7 @@ exports.handler = (event, context, callback) => {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(results[0])
-          // body: JSON.stringify({quote: "is this working", author: "Mark Watson"})
+          // body: JSON.stringify({quote: "Why isn't this working?", author: "Mark Watson"})
         })
       }
     })
