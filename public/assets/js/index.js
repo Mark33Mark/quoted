@@ -1,14 +1,20 @@
 
 const dailyQuote = document.getElementById( "daily-quote" );
+const dailyQuoteID = document.getElementById( "quote-id" );
 const anotherQuoteBtn = document.getElementById( "quote-button" );
 
-const getQuote = () => {
-  axios.get( ".netlify/functions/random" )
+const getQuote = async () => {
+  
+  await fetch( ".netlify/functions/random", {
+      method: 'POST',
+      body: JSON.stringify({
+        region: 'kanto'
+      })
+  })
 
-  .then( response =>  {
-    if ( response.statusText='OK' ) {
-                    
-          const data = response.data;
+  .then( response => response.json())
+  .then( data =>  {
+
           console.log(data);
 
           let theQuote = JSON.stringify( data.quote ); 
@@ -18,9 +24,9 @@ const getQuote = () => {
           newAuthor = theAuthor.replace(/"/g, "");
           
           dailyQuote.innerText = ` ${theQuote} \n- ${newAuthor}`;
+          dailyQuoteID.innerText = `quote ref: ${data.id}`;
         }
-      });
-
+      )
     }
 
 // const deleteNote = (id) =>

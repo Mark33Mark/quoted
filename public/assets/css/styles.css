@@ -73,7 +73,7 @@ a:hover, a::selection{
   background-color: rgb(150, 140, 120);
 }
 
-#daily-quote{
+#daily-quote {
   margin: auto;
   font-size: 1.2rem;
   margin-top: 2rem;
@@ -83,6 +83,12 @@ a:hover, a::selection{
   padding: 1.2rem;
   height: auto;
   background-color: rgb(255, 230, 190);
+}
+
+#quote-id {
+  font-size: 0.65rem;
+  position: absolute;
+  right: 28vw;
 }
 
 .button {
