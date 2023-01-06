@@ -1,18 +1,25 @@
 const db_connect = require( "./utils/db_connection.js" );
 
-const sql_query = "SELECT * FROM quotes ORDER BY RAND() LIMIT 1";
-const sql_count_database_length = "SELECT (SELECT COUNT(1) FROM quotes) AS database_length";
-
 exports.handler = (event, context, callback) => {
 
   context.callbackWaitsForEmptyEventLoop = false;
-  const clientMessage = JSON.parse(event.body);
 
+  let sql_query = "INSERT INTO quotes(quote, author) VALUES ";
+  
+  const clientMessage = JSON.parse(event.body);
+  console.log(clientMessage);
+
+  let query_parameters = "( \"" + clientMessage.quote + " \" , \"" + clientMessage.author + "\" )"
+  
+  sql_query += query_parameters;
+
+  console.log("sql_query = ", sql_query);
+  
   try {
 
     db_connect.getConnection(function(err, connected) {
 
-      connected.execute( sql_query, (error, results) => {
+      connected.execute( sql_query, ( error, result) => {
 
       if (error){ 
 
@@ -21,11 +28,11 @@ exports.handler = (event, context, callback) => {
 
       } else {
 
-        // as connection is available, run 2nd query to get number of quotes available
-        connected.execute( sql_count_database_length, ( error, counter) => {
+        if(result.length === 0){
+          console.log("quote not in database, add it?");
+          }
         
-        const mergedObject = { ...clientMessage, ...results[0], ...counter[0]};
-        console.log("Quote of the day: ", mergedObject);
+        console.log(result)
 
           callback( null, {
               statusCode: 200,
@@ -33,9 +40,8 @@ exports.handler = (event, context, callback) => {
                 'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json'
               },
-              body: JSON.stringify(results[0], counter[0])
+              body: JSON.stringify(result)
             })
-          })
         }
       })
 

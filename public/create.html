@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Quot3d | a quote for the day</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/styles.css?ver=1.0" />
+
+  <link rel="shortcut icon" href="./assets/img/favicon.ico?ver=1.0" type="image/x-icon" />
+</head>
+
+<body>
+  <nav class="custom-bg">
+    <a class="app-brand" href="/">Quot<span class="make-small1">3</span>d</a>
+  </nav>
+  <div class="container">
+    <div class="jumbotron text-center bespoke-jumbo">
+      <img src="./assets/img/quotes.png" aria-label="quotes" class = "img-quotes" />
+      <div class="bespoke-h1">Quot<span class="make-small">3</span>d</div>
+      <h4 class="mt-2 heading-landscape">Add a new quote</h4>
+      <h6 class="sub-heading"> a serverless hosted app &nbsp;
+        <div class="ico-icons icon-SVG_aws-lambda" style="color: #fa7e14;"></div>&nbsp; for &nbsp;
+        <div class="ico-icons icon-SVG_nodeJS" style="color: #3a9422;"></div>
+      </h6>
+
+      <div class="alert icon-fire">
+        <span id="alert_close_button" class="closebtn">&times;</span> 
+        <div class="the_message"></div>
+      </div>
+
+      <form 
+        id="create_a_quote"
+        name="create_a_quote"
+        method="post" 
+      >
+        <label for="quote">Quote:</label>
+        <textarea id="quote" name="quote" maxlength="250" rows="4" cols="50"></textarea><br><br>
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" maxlength="50"><br><br>
+        <input type="submit" value="+ quote">
+      </form>
+    
+    </div>
+  </div>
+
+<footer class="footer font-small ">
+
+  <div class="text-center text-white py-3">© 2021 Copyright:
+    <a href="https://get.watsonised.com/"> watsonised.com </a>
+  </div>
+
+</footer>
+  <script src="./assets/js/create.js"></script>
+</body>
+
+</html>

@@ -2,14 +2,13 @@
 const dailyQuote = document.getElementById( "daily-quote" );
 const dailyQuoteID = document.getElementById( "quote-id" );
 const anotherQuoteBtn = document.getElementById( "quote-button" );
+const data = { quotes_randomiser: 'A quote randomly selected from watsonised\'s sql server.' }
 
 const getQuote = async () => {
   
   await fetch( ".netlify/functions/random", {
       method: 'POST',
-      body: JSON.stringify({
-        region: 'kanto'
-      })
+      body: JSON.stringify(data)
   })
 
   .then( response => response.json())

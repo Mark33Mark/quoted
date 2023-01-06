@@ -211,3 +211,27 @@ a:hover, a::selection{
     line-height: 0.1rem;
   }
 }
+
+.alert {
+  display: none;
+  padding: 20px;
+  background-color: #eca870;
+  color: white;
+  opacity: 1;
+  transition: opacity 1.8s;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
