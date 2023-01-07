@@ -23,7 +23,7 @@ const getQuote = async () => {
           newAuthor = theAuthor.replace(/"/g, "");
           
           dailyQuote.innerText = ` ${theQuote} \n- ${newAuthor}`;
-          dailyQuoteID.innerText = `quote ref: ${data.id}`;
+          dailyQuoteID.innerText = `quote ref: quote ${data.id} from ${data.database_length} quotes.`;
         }
       )
     }

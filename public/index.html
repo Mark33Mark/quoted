@@ -16,6 +16,8 @@
 <body>
   <nav class="custom-bg">
     <a class="app-brand" href="/">Quot<span class="make-small1">3</span>d</a>
+    <br />
+    <a class="app-brand" href="/create">+ quote into db</a>
   </nav>
   <div class="container">
     <div class="jumbotron text-center bespoke-jumbo">
@@ -26,10 +28,14 @@
         <div class="ico-icons icon-SVG_aws-lambda" style="color: #fa7e14;"></div>&nbsp; for &nbsp;
         <div class="ico-icons icon-SVG_nodeJS" style="color: #3a9422;"></div>
       </h6>
-      <div id="daily-quote"></div>
+
+      <div class = quote-wrapper>
+        <div id="daily-quote"></div>
+        <div id="quote-id"></div>
+      </div>
       
       <button id="quote-button" class="button button-blue"> another? </button>
-      <span id="quote-id"></span>
+      
     </div>
   </div>
 

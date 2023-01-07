@@ -73,22 +73,27 @@ a:hover, a::selection{
   background-color: rgb(150, 140, 120);
 }
 
-#daily-quote {
+.quote-wrapper {
   margin: auto;
   font-size: 1.2rem;
   margin-top: 2rem;
   background-image: url(../img/JPG_white-paper-texture.jpg);
   width: 60%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 1.2rem;
+  padding: 0.6rem;
   height: auto;
-  background-color: rgb(255, 230, 190);
+}
+
+#daily-quote {
+  margin: auto;
+  font-size: 1.2rem;
+  height: auto;
 }
 
 #quote-id {
   font-size: 0.65rem;
-  position: absolute;
-  right: 28vw;
+  margin-top: 1rem;
+  text-align: right;
 }
 
 .button {
@@ -119,7 +124,7 @@ a:hover, a::selection{
  * ================================================================================ */
 
 
- @media (max-width: 400px) {
+ @media (max-width: 500px) {
 
   .bespoke-jumbo{
     padding: 0.75rem 0.75rem;
@@ -157,6 +162,10 @@ a:hover, a::selection{
     height: 2.0rem;
     margin-top: 0rem;
     line-height: 0.1rem;
+  }
+
+  #quote {
+    width: 250px;
   }
 }
 
@@ -234,4 +243,8 @@ a:hover, a::selection{
 
 .closebtn:hover {
   color: black;
+}
+
+#author {
+  width: 200px;
 }

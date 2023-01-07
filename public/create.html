@@ -16,6 +16,8 @@
 <body>
   <nav class="custom-bg">
     <a class="app-brand" href="/">Quot<span class="make-small1">3</span>d</a>
+    <br />
+    <a class="app-brand" href="/create">+ quote into db</a>
   </nav>
   <div class="container">
     <div class="jumbotron text-center bespoke-jumbo">
@@ -37,11 +39,9 @@
         name="create_a_quote"
         method="post" 
       >
-        <label for="quote">Quote:</label>
-        <textarea id="quote" name="quote" maxlength="250" rows="4" cols="50"></textarea><br><br>
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="author" maxlength="50"><br><br>
-        <input type="submit" value="+ quote">
+        <textarea id="quote" name="quote" maxlength="250" rows="4" cols="50" placeholder="...input quote here."></textarea><br><br>
+        <input type="text" id="author" name="author" placeholder="...input author's name here" maxlength="80"><br><br>
+        <input type="submit" class="button button-blue" value="+ into db?">
       </form>
     
     </div>

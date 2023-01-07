@@ -33,7 +33,7 @@ exports.handler = (event, context, callback) => {
                 'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json'
               },
-              body: JSON.stringify(results[0], counter[0])
+              body: JSON.stringify(mergedObject)
             })
           })
         }
