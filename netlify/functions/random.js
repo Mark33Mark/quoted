@@ -14,10 +14,11 @@ exports.handler = (event, context, callback) => {
 
       connected.execute( sql_query, (error, results) => {
 
-      if (error){ 
+      if ( error instanceof Error ){ 
 
-        console.log('calling callback with error')
+        console.log('calling callback with error: ', err)
         callback(error);
+        return;
 
       } else {
 
@@ -36,6 +37,7 @@ exports.handler = (event, context, callback) => {
               body: JSON.stringify(mergedObject)
             })
           })
+          connected.release();
         }
       })
 
