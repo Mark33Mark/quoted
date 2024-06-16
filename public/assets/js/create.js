@@ -88,9 +88,6 @@ const checkQuoteExists = async (users_quote) => {
             alert("Please enter a new quote as the record is found in the database: \n\n id: " + data[0].id + "\n quote: " + data[0].quote + "\n author: " + data[0].author )
           } ;
           console.log(data[0]);
-
-          
-
         }
       )
     }
