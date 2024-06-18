@@ -11,23 +11,26 @@ exports.handler = async (event, context) => {
 	try {
 		const connected = await connection.getConnection();
 		const results = await connected.execute(sql_query);
-		const counter = await connected.execute(sql_count_database_length);
+		const counter = await connected.execute(sql_count_database_length)
 
-		const mergedObject = {
-			...clientMessage,
-			...results[0][0],
-			...counter[0][0],
-		};
-		console.log('Quote of the day: ', mergedObject);
+		console.log( 'clientMessage = ', clientMessage)
+		console.log( 'results = ', results[0][0])
+		console.log( 'counter = ', counter[0][0])
+				const mergedObject = {
+					...clientMessage,
+					...results[0][0],
+					...counter[0][0],
+				};
+				console.log('Quote of the day: ', mergedObject);
 
-		return {
-			statusCode: 200,
-			headers: {
-				'Access-Control-Allow-Origin': '*',
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(mergedObject),
-		};
+				return {
+					statusCode: 200,
+					headers: {
+						'Access-Control-Allow-Origin': '*',
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(mergedObject),
+				};
 	} catch (error) {
 		console.log(
 			'There is a problem communicating with the Quotes database:\n',
