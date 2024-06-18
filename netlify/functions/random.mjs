@@ -4,8 +4,9 @@ const sql_query = 'SELECT * FROM quotes ORDER BY RAND() LIMIT 1';
 const sql_count_database_length =
 	'SELECT (SELECT COUNT(1) FROM quotes) AS database_length';
 
-exports.handler = async (event) => {
-	const clientMessage = JSON.parse(event.body);
+export default async (request) => {
+//console.log('body = ', typeof await request.json())
+	const clientMessage = await request.json();
 
 	try {
 		const connected = await connection.getConnection();
@@ -19,14 +20,15 @@ exports.handler = async (event) => {
 		};
 		console.log('Quote of the day: ', mergedObject);
 
-		return {
-			statusCode: 200,
-			headers: {
-				'Access-Control-Allow-Origin': '*',
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(mergedObject),
-		};
+		return new Response(JSON.stringify(mergedObject));
+		// return {
+		// 	statusCode: 200,
+		// 	headers: {
+		// 		'Access-Control-Allow-Origin': '*',
+		// 		'Content-Type': 'application/json',
+		// 	},
+		// 	body: JSON.stringify(mergedObject),
+		// };
 	} catch (error) {
 		console.log(
 			'There is a problem communicating with the Quotes database:\n',
