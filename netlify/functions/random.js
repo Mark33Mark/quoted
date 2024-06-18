@@ -1,4 +1,4 @@
-const connection = require('./utils/db_connection.js');
+import connection from './utils/db_connection.js';
 
 const sql_query = 'SELECT * FROM quotes ORDER BY RAND() LIMIT 1';
 const sql_count_database_length =
