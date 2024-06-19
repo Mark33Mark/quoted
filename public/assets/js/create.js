@@ -59,7 +59,7 @@ const checkQuoteExists = async (users_quote) => {
   .then( response => response.json())
   .then( data =>  {
 
-          if( !data[0] ) { 
+          if( !data[0][0] ) { 
             console.log("The quote is not in the database, add it?")
             if ( confirm("Proceed with adding: \n\n quote: \'" + quote.value + "\' \n author: \'" + author.value + "\'\n ?") ) {
               
@@ -70,9 +70,9 @@ const checkQuoteExists = async (users_quote) => {
           
             .then( response => response.json())
             .then( data =>  {
-              if(data.insertId) {
+              if(data[0].insertId) {
               console.log('data = ', data);
-              alert("Congratulations, the quote has been added with id: \n" + data.insertId );
+              alert("Congratulations, the quote has been added with id: \n" + data[0].insertId);
               quote.value = " ";
               author.value = " ";
               } else {
@@ -85,9 +85,10 @@ const checkQuoteExists = async (users_quote) => {
             }
 
           } else {
-            alert("Please enter a new quote as the record is found in the database: \n\n id: " + data[0].id + "\n quote: " + data[0].quote + "\n author: " + data[0].author )
+
+            alert("Please enter a new quote as your quote already exists in the database: \n\n id: " + data[0][0].id + "\n quote: " + data[0][0].quote + "\n author: " + data[0][0].author )
           } ;
-          console.log(data[0]);
+          console.log(data[0][0]);
         }
       )
     }
