@@ -1,4 +1,4 @@
-const db_connect = require( "./utils/db_connection.js" );
+const db_connect = require( "./utils/connection.js" );
 
 exports.handler = (event, context, callback) => {
 

@@ -1,4 +1,4 @@
-const db_connect = require( "./utils/db_connection.js" );
+const db_connect = require( "./utils/connection.js" );
 const sql_query = "SELECT * FROM `quotes` WHERE `quote` LIKE ?";
 
 /* 
