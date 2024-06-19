@@ -15,4 +15,3 @@ publish = "public"
     for = "/*"
     [headers.values]
         access-control-allow-origin="*"
-        content-type="application/json"
