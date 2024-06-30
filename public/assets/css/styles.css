@@ -6,59 +6,86 @@ body {
   margin: 0;
   padding: 0;
   overflow-y: hidden;
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
 }
 
-.bespoke-h1{
+.quotes__heading1 {
   font-weight: 500;
   font-size: 3rem;
 }
 
-.bespoke-jumbo{
+.quotes__heading4 {
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.quotes {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quotes__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
   padding: 1.5rem 1.5rem;
+  width: 80vw;
   margin: 2rem 0;
   background-color: #ecf0f1;
   border-radius: 0.3rem;
 }
 
-.make-small{
+.make-small {
   font-size: 2rem;
   font-weight: bolder;
 }
 
-.img-quotes{
+.img-quotes {
   height: 7rem;
   width: auto;
 }
 
-.make-small1{
-  font-size: 0.95rem;
-  font-weight: 900;
-}
-
-.custom-bg{
+.navigation {
   padding: 0.75rem 1rem;
+  height: 3.5rem;
   background-color: rgb(150, 140, 120);
 }
 
-.allow-overflow{
-  overflow-y: auto;
+.navigation--small {
+  font-size: 0.95rem;
+  font-weight: 100;
 }
 
-.ico-icons{
+.ico-icons {
   font-size: 1.5rem;
   vertical-align:middle;
   display: inline;
 }
 
-a {
+.navigation__link {
   color: rgb(240, 225, 200);
 }
 
-a:hover, a::selection{
+.navigation__link:hover, 
+.navigation__link::selection {
   color: rgb(50, 50, 50);
+  position: absolute;
+  font-size: large;
+  font-weight: 800;
   text-decoration: none;
   text-shadow: 1px 1px 2px white, 0 0 0.1rem yellow, 0 0 0.5rem yellow;
-
+  transform: scale(1.4) translate(16px, 0);
 }
 
 .footer {
@@ -92,31 +119,156 @@ a:hover, a::selection{
 
 #quote-id {
   font-size: 0.65rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   text-align: right;
 }
 
-.button {
-  background-color: rgb(150, 140, 120)ite; 
+#quotes__textcontainer {
+  width: 41vw;
+  min-width: 100px;
+  min-height: 100px;
+  padding: 0.5rem;
+}
+
+#quotes__author {
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 40vw;
+  min-width: 100px;
+}
+
+.quotes__create {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+button, input[type="submit"] {
+  height: 4.5rem;
+  width: 7rem;
+  /* background-color: rgb(150, 140, 120);  */
   color: black; 
   border: 0px;
   /* border: 2px solid #008CBA; */
   box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 0.75rem;
-  padding: 0.75rem 1.5rem;
+  /* padding: 0.75rem 1.5rem; */
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  /* display: inline-block; */
+  position: relative;
   font-size: 1.1rem;
-  margin: 2rem 0.1rem 0.25rem 0.1rem;
+  margin: 1rem 0.1rem 0.25rem 0.1rem;
   transition-duration: 0.4s;
   cursor: pointer;
 }
 
-.button-blue:hover {
+.button__randomQuote:hover {
   background-color: #008CBA;
   color: white;
 }
+
+/* BOOK */
+
+.button__loading .button__text {
+	/* visibility: hidden; */
+    display: none;
+    opacity: 0;
+}
+
+.button__randomQuote.button__loading {
+  background: rgba(0, 165, 40, 0.25);
+  transition: all 0.66s;
+}
+
+:has(.button__loading) .button__image {
+  display:block;
+  width: 110px;
+  height: 60px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius:4px;
+  perspective: 450px;
+}
+
+/* ----- open book picture ------ */
+
+:has(.button__loading) .button__image:before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  top: 3px;
+  bottom: 3px;
+  border-radius:3px;
+  background: #f5f5f5  no-repeat;
+  background-size: 32px 2.75px;
+  background-image: 	
+              linear-gradient(#ddd 6px, transparent 0),
+              linear-gradient(#ddd 6px, transparent 0), 
+              linear-gradient(#ddd 6px, transparent 0), 
+              linear-gradient(#ddd 6px, transparent 0), 
+              linear-gradient(#ddd 6px, transparent 0), 
+              linear-gradient(#ddd 6px, transparent 0),
+              linear-gradient(#ddd 6px, transparent 0), 
+              linear-gradient(#ddd 6px, transparent 0);;
+
+  background-position: 8px 10px, 8px 20px, 8px 30px, 8px 40px, 
+              60px 10px, 60px 20px, 60px 30px, 60px 40px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.25);
+}
+
+/* ----- turning page with animation ---- */
+
+:has(.button__loading) .button__image:after {
+  content: '';
+      position: absolute;
+      width: calc(50% - 2px);
+      right: 3px;
+      top: 3px;
+      bottom: 3px;
+      border-radius: 3px;
+      background: #fff no-repeat;
+      background-size: 32px 3px;
+      background-image: 
+              linear-gradient(#ddd 6px, transparent 0), 
+              linear-gradient(#ddd 6px, transparent 0), 
+              linear-gradient(#ddd 6px, transparent 0),
+              linear-gradient(#ddd 6px, transparent 0);
+      background-position: 40% 10px, 40% 20px, 40%  30px, 40% 40px;
+      transform: rotateY(0deg);
+      transform-origin: left center;
+  animation: paging 2s linear infinite alternate;
+}
+
+.footer__container {
+  position: absolute;
+  bottom: 1.5rem;
+  color: white;
+  margin-left: 0.5rem;
+}
+
+.footer__authorUrl {
+  text-decoration: underline dashed gainsboro;
+  text-underline-offset: 0.25rem;
+  color: white;
+}
+
+.footer__authorUrl:hover {
+  color: orange;
+  text-decoration: underline dashed orangered;
+  text-underline-offset: 0.25rem;
+}
+
+@keyframes paging {
+  to {
+      transform: rotateY( -180deg );
+  }
+}
+
 
 /* 
  * ================================================================================ 
@@ -126,12 +278,12 @@ a:hover, a::selection{
 
  @media (max-width: 500px) {
 
-  .bespoke-jumbo{
+  .quotes__container {
     padding: 0.75rem 0.75rem;
     margin-top: 0.75rem;
   }
 
-  .custom-bg{
+  .navigation{
     padding: 0.25rem 1rem;
   }
 
@@ -142,10 +294,15 @@ a:hover, a::selection{
     display: inline-block;
   }
 
-  .bespoke-h1{
+  .quotes__heading1 {
     font-weight: 500;
     font-size: 2rem;
     display: inline-block;
+  }
+
+  .quotes__heading4 {
+    font-weight: 400;
+    font-size: 1rem;
   }
 
   #daily-quote{
@@ -164,18 +321,22 @@ a:hover, a::selection{
     line-height: 0.1rem;
   }
 
+  .footer__container {
+    bottom: 1.0rem;
+  }
+
   #quote {
     width: 250px;
   }
 }
 
-@media only screen and (max-device-width: 812px) and (orientation : landscape){
+@media only screen and (max-device-width: 812px) and (orientation : landscape) {
   
-  .custom-bg{
+  .navigation {
     padding: 0.25rem 1rem;
   }
 
-  .bespoke-jumbo{
+  .quotes__container {
     padding: 0.25rem 0.25rem;
     margin-top: 0.5rem;
   }
@@ -186,13 +347,13 @@ a:hover, a::selection{
     display: inline-block;
   }
 
-  .bespoke-h1{
+  .quotes__heading1 {
     font-weight: 500;
     font-size: 2rem;
     display: inline-block;
   }
 
-  #daily-quote{
+  #daily-quote {
     margin: auto;
     font-size: 1.0rem;
     margin-top: 1rem;
@@ -201,11 +362,11 @@ a:hover, a::selection{
     height: auto;
   }
 
-  .heading-landscape{
+  .quotes__heading4 {
     display: inline-block;
   }
 
-  .button {
+  button {
     padding: 0.25rem 3rem;
     font-size: 1.0rem;
     margin: 1rem 0.1rem 0.25rem 0.1rem;
@@ -223,11 +384,17 @@ a:hover, a::selection{
 
 .alert {
   display: none;
-  padding: 20px;
+  position: absolute;
+  padding: 1rem;
   background-color: #eca870;
   color: white;
   opacity: 1;
   transition: opacity 1.8s;
+}
+
+.the_message {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
 }
 
 .closebtn {
@@ -235,14 +402,19 @@ a:hover, a::selection{
   color: white;
   font-weight: bold;
   float: right;
-  font-size: 22px;
+  font-size: 2rem;
   line-height: 20px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .closebtn:hover {
-  color: black;
+  color: red;
+}
+
+.alert:has(.closebtn:hover) {
+  transition: 0.8s;
+  background-color: gainsboro;
 }
 
 #author {

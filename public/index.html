@@ -1,52 +1,86 @@
 <!DOCTYPE html>
 <html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="ie=edge"
+		/>
+		<title>Quot3d | a quote for the day</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Quot3d | a quote for the day</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
-  <link rel="stylesheet" href="./assets/css/styles.css?ver=1.0" />
+		<link
+			rel="stylesheet"
+			href="./assets/css/styles.css?ver=1.0"
+		/>
 
-  <link rel="shortcut icon" href="./assets/img/favicon.ico?ver=1.0" type="image/x-icon" />
-</head>
+		<link
+			rel="shortcut icon"
+			href="./assets/img/favicon.ico?ver=1.0"
+			type="image/x-icon"
+		/>
+	</head>
 
-<body>
-  <nav class="custom-bg">
-    <a class="app-brand" href="/">Quot<span class="make-small1">3</span>d</a>
-    <br />
-    <a class="app-brand" href="/create">+ quote into db</a>
-  </nav>
-  <div class="container">
-    <div class="jumbotron text-center bespoke-jumbo">
-      <img src="./assets/img/quotes.png" aria-label="quotes" class = "img-quotes" />
-      <div class="bespoke-h1">Quot<span class="make-small">3</span>d</div>
-      <h4 class="mt-2 heading-landscape">... a quote for your day.</h4>
-      <h6 class="sub-heading"> a serverless hosted app &nbsp;
-        <div class="ico-icons icon-SVG_aws-lambda" style="color: #fa7e14;"></div>&nbsp; for &nbsp;
-        <div class="ico-icons icon-SVG_nodeJS" style="color: #3a9422;"></div>
-      </h6>
+	<body>
+		<nav class="navigation">
+			<a
+				class="navigation__link"
+				href="/"
+				>Quot<span class="navigation--small">3</span>d</a
+			>
+			<br />
+			<a
+				class="navigation__link"
+				href="/create"
+				>+ quote into db</a
+			>
+		</nav>
+		<section class="quotes">
+			<div class="quotes__container">
+				<img
+					src="./assets/img/quotes.png"
+					aria-label="quotes"
+					class="img-quotes"
+				/>
+				<div class="quotes__heading1">Quot<span class="make-small">3</span>d</div>
+				<h4 class="quotes__heading4">... a quote for your day.</h4>
+				<h6 class="sub-heading">
+					a serverless hosted app &nbsp;
+					<div
+						class="ico-icons icon-SVG_aws-lambda"
+						style="color: #fa7e14"
+					></div>
+					&nbsp; for &nbsp;
+					<div
+						class="ico-icons icon-SVG_nodeJS"
+						style="color: #3a9422"
+					></div>
+				</h6>
 
-      <div class = quote-wrapper>
-        <div id="daily-quote"></div>
-        <div id="quote-id"></div>
-      </div>
-      
-      <button id="quote-button" class="button button-blue"> another? </button>
-      
-    </div>
-  </div>
+				<div class="quote-wrapper">
+					<div id="daily-quote"></div>
+					<div id="quote-id"></div>
+				</div>
 
-<footer class="footer font-small ">
+				<button
+					id="button__randomQuote"
+					class="button__randomQuote"
+				>
+					<span class="button__text">another?</span>
+					<span class="button__image"></span>
+				</button>
+			</div>
+		</section>
 
-  <div class="text-center text-white py-3">© 2021 Copyright:
-    <a href="https://get.watsonised.com/"> watsonised.com </a>
-  </div>
-
-</footer>
-  <script src="./assets/js/index.js"></script>
-</body>
-
+		<footer class="footer">
+			<div class="footer__container">
+				© 2024 Copyright:
+				<a class="footer__authorUrl" href="https://get.watsonised.com/"> watsonised.com </a>
+			</div>
+		</footer>
+		<script src="./assets/js/index.js"></script>
+	</body>
 </html>

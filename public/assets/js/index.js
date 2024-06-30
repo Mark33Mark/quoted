@@ -1,10 +1,12 @@
 
 const dailyQuote = document.getElementById( "daily-quote" );
 const dailyQuoteID = document.getElementById( "quote-id" );
-const anotherQuoteBtn = document.getElementById( "quote-button" );
+const anotherQuoteBtn = document.getElementById( "button__randomQuote" );
 const data = { quotes_randomiser: 'A quote randomly selected from watsonised\'s sql server.' }
 
 const getQuote = async () => {
+  anotherQuoteBtn.classList.add('button__loading');
+  
   
   await fetch( ".netlify/functions/random", {
       method: 'POST',
@@ -24,6 +26,8 @@ const getQuote = async () => {
           
           dailyQuote.innerText = ` ${theQuote} \n- ${newAuthor}`;
           dailyQuoteID.innerText = `quote ref: quote ${data.id} from ${data.database_length} quotes.`;
+
+          anotherQuoteBtn.classList.remove('button__loading');
         }
       )
     }
