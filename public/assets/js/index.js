@@ -1,6 +1,6 @@
 
-const dailyQuote = document.getElementById( "daily-quote" );
-const dailyQuoteID = document.getElementById( "quote-id" );
+const dailyQuote = document.getElementById( "quotes__selected" );
+const dailyQuoteID = document.getElementById( "quotes__selectedId" );
 const anotherQuoteBtn = document.getElementById( "button__randomQuote" );
 const data = { quotes_randomiser: 'A quote randomly selected from watsonised\'s sql server.' }
 

@@ -25,66 +25,48 @@
 	</head>
 
 	<body>
-		<nav class="navigation">
-			<a
-				class="navigation__link"
-				href="/"
-				>Quot<span class="navigation--small">3</span>d</a
-			>
-			<br />
-			<a
-				class="navigation__link"
-				href="/create"
-				>+ quote into db</a
-			>
-		</nav>
+		<!-- HEADER -->
+		<!-- use the iframe to inject the html file content, and then remove the iframe -->
+		<!-- https://css-tricks.com/the-simplest-ways-to-handle-html-includes/ -->
+		<iframe
+			src="./iframes/header.html"
+			onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove()"
+		></iframe>
+
 		<section class="quotes">
 			<div class="quotes__container">
-				<img
-					src="./assets/img/quotes.png"
-					aria-label="quotes"
-					class="img-quotes"
-				/>
-				<div class="quotes__heading1">Quot<span class="make-small">3</span>d</div>
-				<h4 class="quotes__heading4">Add a new quote</h4>
-				<h6 class="sub-heading">
-					a serverless hosted app &nbsp;
-					<div
-						class="ico-icons icon-SVG_aws-lambda"
-						style="color: #fa7e14"
-					></div>
-					&nbsp; for &nbsp;
-					<div
-						class="ico-icons icon-SVG_nodeJS"
-						style="color: #3a9422"
-					></div>
-				</h6>
+
+				<!-- BANNER -->
+				<iframe
+					src="./iframes/banner.html"
+					onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove()"
+				></iframe>
+
+				<h4 class="quotes__heading4">...add a new quote</h4>
 
 				<div class="alert icon-fire">
 					<span
 						id="alert_close_button"
 						class="closebtn"
-            title="close alert"
+						title="close alert"
 						>&times;</span
 					>
 					<div class="the_message"></div>
 				</div>
 
 				<form
-          id="quotes__create"	
-          class="quotes__create"
+					id="quotes__create"
+					class="quotes__create"
 					name="quotes__create"
 					method="post"
 				>
 					<textarea
 						id="quotes__textcontainer"
 						name="quotes__textcontainer"
-            class="quotes__textcontainer"
+						class="quotes__textcontainer"
 						maxlength="250"
-
 						placeholder="...input quote here."
-					></textarea
-					>
+					></textarea>
 					<input
 						type="text"
 						id="quotes__author"
@@ -101,12 +83,11 @@
 			</div>
 		</section>
 
-		<footer class="footer">
-			<div class="footer__container">
-				© 2024 Copyright:
-				<a class="footer__authorUrl" href="https://get.watsonised.com/"> watsonised.com </a>
-			</div>
-		</footer>
+		<!-- FOOTER -->
+		<iframe
+			src="./iframes/footer.html"
+			onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove()"
+		></iframe>
 		<script src="./assets/js/create.js"></script>
 	</body>
 </html>

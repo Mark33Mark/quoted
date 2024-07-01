@@ -1,16 +1,16 @@
 {
-  "name": "nodejs-express-mysql",
-  "version": "1.0.0",
-  "description": "Node.js Restful CRUD API with Node.js, Express and MySQL",
+  "name": "nodejs-lambda-mysql",
+  "version": "2.0.0",
+  "description": "Restful CRUD API with Node.js, Lambda serverless and MySQL",
   "main": "server.js",
   "keywords": [
     "nodejs",
-    "express",
+    "lamda serverless",
     "mysql",
     "restapi"
   ],
   "author": "Mark Watson",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.19.2",

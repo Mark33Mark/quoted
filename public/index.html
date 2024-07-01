@@ -25,44 +25,28 @@
 	</head>
 
 	<body>
-		<nav class="navigation">
-			<a
-				class="navigation__link"
-				href="/"
-				>Quot<span class="navigation--small">3</span>d</a
-			>
-			<br />
-			<a
-				class="navigation__link"
-				href="/create"
-				>+ quote into db</a
-			>
-		</nav>
+		<!-- HEADER -->
+		<!-- use the iframe to inject the html file content, and then remove the iframe -->
+		<!-- https://css-tricks.com/the-simplest-ways-to-handle-html-includes/ -->
+		<iframe
+			src="./iframes/header.html"
+			onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove()"
+		></iframe>
+
 		<section class="quotes">
 			<div class="quotes__container">
-				<img
-					src="./assets/img/quotes.png"
-					aria-label="quotes"
-					class="img-quotes"
-				/>
-				<div class="quotes__heading1">Quot<span class="make-small">3</span>d</div>
-				<h4 class="quotes__heading4">... a quote for your day.</h4>
-				<h6 class="sub-heading">
-					a serverless hosted app &nbsp;
-					<div
-						class="ico-icons icon-SVG_aws-lambda"
-						style="color: #fa7e14"
-					></div>
-					&nbsp; for &nbsp;
-					<div
-						class="ico-icons icon-SVG_nodeJS"
-						style="color: #3a9422"
-					></div>
-				</h6>
 
-				<div class="quote-wrapper">
-					<div id="daily-quote"></div>
-					<div id="quote-id"></div>
+				<!-- BANNER -->
+				<iframe
+					src="./iframes/banner.html"
+					onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove()"
+				></iframe>
+
+				<h4 class="quotes__heading4">...a quote for your day</h4>
+
+				<div class="quotes__wrapper">
+					<div id="quotes__selected"></div>
+					<div id="quotes__selectedId"></div>
 				</div>
 
 				<button
@@ -75,12 +59,13 @@
 			</div>
 		</section>
 
-		<footer class="footer">
-			<div class="footer__container">
-				© 2024 Copyright:
-				<a class="footer__authorUrl" href="https://get.watsonised.com/"> watsonised.com </a>
-			</div>
-		</footer>
+		<!-- FOOTER -->
+		<!-- use the iframe to inject the html file content, and then remove the iframe -->
+		<!-- https://css-tricks.com/the-simplest-ways-to-handle-html-includes/ -->
+		<iframe
+			src="./iframes/footer.html"
+			onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove()"
+		></iframe>
 		<script src="./assets/js/index.js"></script>
 	</body>
 </html>
