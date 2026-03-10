@@ -2,6 +2,7 @@
   "name": "nodejs-lambda-mysql",
   "version": "2.0.0",
   "description": "Restful CRUD API with Node.js, Lambda serverless and MySQL",
+  "type": "module",
   "main": "server.js",
   "keywords": [
     "nodejs",
@@ -12,8 +13,8 @@
   "author": "Mark Watson",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
     "mysql2": "^3.10.1"
   }
 }

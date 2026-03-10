@@ -1,4 +1,4 @@
-import connection from './utils/connection.js';
+import { connection } from './utils/connection.mjs';
 
 export default async (request) => {
 	let sql_query = 'INSERT INTO quotes(quote, author) VALUES ';

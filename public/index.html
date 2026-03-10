@@ -26,8 +26,8 @@
 
 	<body>
 		<!-- HEADER -->
-		<!-- use the iframe to inject the html file content, and then remove the iframe -->
-		<!-- https://css-tricks.com/the-simplest-ways-to-handle-html-includes/ -->
+		<!-- using an iframe to inject the html file content, and then remove the iframe -->
+		<!-- https://css-tricks.com/the-simplest-ways-to-handle-html-includes/#aa-use-iframes -->
 		<iframe
 			src="./iframes/header.html"
 			onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove()"
@@ -60,8 +60,8 @@
 		</section>
 
 		<!-- FOOTER -->
-		<!-- use the iframe to inject the html file content, and then remove the iframe -->
-		<!-- https://css-tricks.com/the-simplest-ways-to-handle-html-includes/ -->
+		<!-- using an iframe to inject the html file content, and then remove the iframe -->
+		<!-- https://css-tricks.com/the-simplest-ways-to-handle-html-includes/#aa-use-iframes -->
 		<iframe
 			src="./iframes/footer.html"
 			onload="this.insertAdjacentHTML('afterend', (this.contentDocument.body||this.contentDocument).innerHTML);this.remove()"

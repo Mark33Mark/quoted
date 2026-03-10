@@ -1,4 +1,4 @@
-import connection from './utils/connection.js';
+import { connection } from './utils/connection.mjs';
 
 const sql_query = 'SELECT * FROM `quotes` WHERE `quote` LIKE ?';
 
